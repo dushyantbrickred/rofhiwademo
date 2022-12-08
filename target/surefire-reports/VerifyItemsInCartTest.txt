@@ -1,0 +1,18 @@
+-------------------------------------------------------------------------------
+Test set: VerifyItemsInCartTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 16.875 sec <<< FAILURE!
+VerifyItemsInCart(VerifyItemsInCartTest)  Time elapsed: 8.17 sec  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: Unable to find element with locator By.id: //div[@class='cart_item']
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.1.1', revision: 'e8fcc2cecf'
+System info: host: 'LAB1033R8HK3', ip: '192.168.0.200', os.name: 'Windows 10', os.arch: 'x86', os.version: '10.0', java.version: '1.8.0_181'
+Driver info: driver.version: SeleniumDriver
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at Utilities.SeleniumDriver.GetText(SeleniumDriver.java:117)
+	at PageObjects.YourCartPage.VerifyItemsInCart(YourCartPage.java:18)
+	at VerifyItemsInCartTest.VerifyItemsInCart(VerifyItemsInCartTest.java:38)
+

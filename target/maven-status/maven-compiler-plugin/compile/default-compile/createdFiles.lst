@@ -1,0 +1,4 @@
+PageObjects\YourCartPage.class
+PageObjects\LoginPage.class
+PageObjects\SwagLabsInventoryPage.class
+Utilities\SeleniumDriver.class
