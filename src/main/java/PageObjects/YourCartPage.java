@@ -13,13 +13,14 @@ public class YourCartPage {
     By itemsInCart = By.xpath("//div[@class='inventory_item_name']");
 
 
-    public boolean VerifyItemsInCart(String itemName) throws Exception {
+    public boolean VerifyItemsInCart(List<String> itemName) {
 
-        System.out.println(driverActions.GetText(itemsInCart).equals(itemName));
-        if (driverActions.GetText(itemsInCart).equals(itemName)){
-            System.out.println("Item found " +itemName);
-        }else {
-            return false;
+        for (int i = 0; i<itemName.size();i++){
+            if (driverActions.ListOfElements(itemsInCart).get(i).getText().equals(itemName.get(i))){
+                System.out.println("Item found " +itemName.get(i));
+            }else {
+                return false;
+            }
         }
         return true;
     }

@@ -7,6 +7,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class VerifyItemsInCartTest {
 
@@ -23,30 +25,22 @@ public class VerifyItemsInCartTest {
         loginPage = new LoginPage();
         swagLabsInventoryPage = new SwagLabsInventoryPage();
         yourCartPage = new YourCartPage();
-
-
     }
 
 
     @Test
     public void VerifyItemsInCart() throws Exception {
 
+        List<String> cartItems = new ArrayList<>();
         loginPage.Login("standard_user","secret_sauce");
         swagLabsInventoryPage.SortBy("Price (low to high)");
         swagLabsInventoryPage.AddInventoryItemToChat();
-        String itemName = swagLabsInventoryPage.GetInventoryItemName();
-        System.out.println(itemName);
-        swagLabsInventoryPage.ClickOnCart();
-        Assert.assertTrue(yourCartPage.VerifyItemsInCart(itemName));
-       /* swagLabsInventoryPage.SortBy("Price (high to low)");
+        cartItems.add(swagLabsInventoryPage.GetInventoryItemName());
+        swagLabsInventoryPage.SortBy("Price (high to low)");
         swagLabsInventoryPage.AddInventoryItemToChat();
-        String itemName = swagLabsInventoryPage.GetInventoryItemName();
+        cartItems.add(swagLabsInventoryPage.GetInventoryItemName());
         swagLabsInventoryPage.ClickOnCart();
-        Assert.assertTrue(yourCartPage.VerifyItemsInCart(itemName));
-        System.out.println(itemName);*/
+        Assert.assertTrue(yourCartPage.VerifyItemsInCart(cartItems));
         seleniumDriver.EndTest();
-
     }
-
-
 }

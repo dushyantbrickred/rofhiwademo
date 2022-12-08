@@ -95,9 +95,10 @@ public class SeleniumDriver {
 
 
 
-    public Object ElementList(By locator) throws Exception {
+    public List<WebElement> ListOfElements(By locator) {
 
-        return  driver.findElements(locator).size();
+        List<WebElement> listOfElements = driver.findElements(locator);
+        return  listOfElements;
 
 
     }
@@ -114,6 +115,7 @@ public class SeleniumDriver {
 
     public String GetText(By locator){
 
+        WaitForElementToBeClickable(locator);
         return driver.findElement(locator).getText();
 
     }
